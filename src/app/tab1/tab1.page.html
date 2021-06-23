@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Books Collection
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let b of books.data">
+      <ion-label>
+        {{b.judul}}<br />
+        <small><ion-text color="secondary">{{b.pengarang}}</ion-text></small>
+      </ion-label>
+      <ion-note color="primary">{{b.tahun_terbit}}</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
